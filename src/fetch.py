@@ -59,15 +59,15 @@ def run(frequency: str):
             continue
         for slug in provider_cfg["slugs"]:
             for feed_name in feeds:
-                print(f"Fetching {provider}/{slug}/{feed_name}...")
+                print(f"Fetching {slug}/{feed_name}...")
                 try:
                     data = fetch_feed(slug, feed_name)
                     compressed = compress(data)
 
                     if frequency == "realtime":
-                        hf_path = f"data/{provider}/{slug}/{feed_name}/{date_str}/{time_str}.json.gz"
+                        hf_path = f"data/{slug}/{feed_name}/{date_str}_{time_str}.json.gz"
                     else:
-                        hf_path = f"data/{provider}/{slug}/{feed_name}/{date_str}.json.gz"
+                        hf_path = f"data/{slug}/{feed_name}/{date_str}.json.gz"
 
                     upload(compressed, hf_path)
                     print(f"  Uploaded to {hf_path}")

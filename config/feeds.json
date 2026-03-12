@@ -1,6 +1,6 @@
 {
   "docomo": {
-    "slugs": ["docomo-cycle", "docomo-cycle-tokyo"],
+    "slugs": ["docomo-cycle"],
     "feeds": {
       "realtime": ["station_status"],
       "daily": ["station_information", "system_information"]
