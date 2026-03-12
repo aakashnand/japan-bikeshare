@@ -1,0 +1,16 @@
+{
+  "docomo": {
+    "slugs": ["docomo-cycle", "docomo-cycle-tokyo"],
+    "feeds": {
+      "realtime": ["station_status"],
+      "daily": ["station_information", "system_information"]
+    }
+  },
+  "openstreet": {
+    "slugs": ["hellocycling"],
+    "feeds": {
+      "realtime": ["station_status"],
+      "daily": ["station_information", "system_information", "vehicle_types"]
+    }
+  }
+}
