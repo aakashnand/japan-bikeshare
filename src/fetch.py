@@ -51,7 +51,7 @@ def run(frequency: str):
     config = load_config()
     now = datetime.now(timezone.utc)
     date_str = now.strftime("%Y-%m-%d")
-    time_str = now.strftime("%H-%M")
+    datetime_str = now.strftime("%Y%m%d_%H%M")
 
     for provider, provider_cfg in config.items():
         feeds = provider_cfg["feeds"].get(frequency, [])
@@ -65,7 +65,7 @@ def run(frequency: str):
                     compressed = compress(data)
 
                     if frequency == "realtime":
-                        hf_path = f"data/{slug}/{feed_name}/{date_str}_{time_str}.json.gz"
+                        hf_path = f"data/{slug}/{feed_name}/{datetime_str}.json.gz"
                     else:
                         hf_path = f"data/{slug}/{feed_name}/{date_str}.json.gz"
 

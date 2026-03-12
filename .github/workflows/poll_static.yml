@@ -2,7 +2,7 @@ name: Poll static feeds (daily)
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 15 * * *'  # 00:00 JST (UTC+9)
   workflow_dispatch:
 
 jobs:
